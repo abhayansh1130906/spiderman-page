@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { EASE_POWER } from "@/lib/motion";
 
 export function CTASection() {
   return (
@@ -29,7 +30,7 @@ export function CTASection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6, ease: EASE_POWER }}
             className="font-body text-xs tracking-[0.4em] uppercase"
             style={{ color: "var(--sp-on-primary-fixed)" }}
           >
@@ -41,7 +42,7 @@ export function CTASection() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, delay: 0.1, ease: EASE_POWER }}
             className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-[6rem] uppercase leading-none"
             style={{ color: "var(--sp-on-primary-fixed)" }}
           >
@@ -64,7 +65,7 @@ export function CTASection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, delay: 0.2, ease: EASE_POWER }}
             className="font-body text-base sm:text-lg max-w-md"
             style={{ color: "color-mix(in srgb, #410003 70%, #131313)" }}
           >
@@ -77,7 +78,7 @@ export function CTASection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, delay: 0.3, ease: EASE_POWER }}
             className="flex flex-col sm:flex-row gap-4"
           >
             <Button

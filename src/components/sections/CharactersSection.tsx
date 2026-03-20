@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Camera, Heart, AlertTriangle } from "lucide-react";
+import { EASE_POWER, staggerContainer, cardReveal } from "@/lib/motion";
 
 const characters = [
   {
@@ -68,19 +69,9 @@ const characters = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12 } },
-};
+const containerVariants = staggerContainer;
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
-  },
-};
+const cardVariants = cardReveal;
 
 export function CharactersSection() {
   return (
@@ -95,7 +86,7 @@ export function CharactersSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, ease: EASE_POWER }}
           className="mb-16"
         >
           <span

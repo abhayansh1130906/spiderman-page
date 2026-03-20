@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -16,6 +16,10 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#131313",
+};
+
 export const metadata: Metadata = {
   title: "Spider-Man: Brand New Day",
   description:
@@ -26,7 +30,6 @@ export const metadata: Metadata = {
       "The world has changed. The web is expanding. Experience the dawn of a heroic era.",
     type: "website",
   },
-  themeColor: "#131313",
 };
 
 export default function RootLayout({

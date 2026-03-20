@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Moon, Eye } from "lucide-react";
+import { EASE_POWER, staggerContainer, cardReveal } from "@/lib/motion";
 
 const episodes = [
   {
@@ -28,21 +29,9 @@ const episodes = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.15 },
-  },
-};
+const containerVariants = staggerContainer;
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
-  },
-};
+const cardVariants = cardReveal;
 
 export function EpisodesSection() {
   return (
@@ -57,7 +46,7 @@ export function EpisodesSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, ease: EASE_POWER }}
           className="mb-16"
         >
           <span

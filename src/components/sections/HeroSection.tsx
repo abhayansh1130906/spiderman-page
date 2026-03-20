@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
+import { EASE_POWER } from "@/lib/motion";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -12,7 +13,7 @@ const fadeUp = {
     transition: {
       delay: i * 0.15,
       duration: 0.8,
-      ease: [0.16, 1, 0.3, 1],
+      ease: EASE_POWER,
     },
   }),
 };
@@ -146,7 +147,7 @@ export function HeroSection() {
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1, delay: 0.4, ease: EASE_POWER }}
             className="relative hidden lg:flex justify-end items-center h-full"
           >
             <div
